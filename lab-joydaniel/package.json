@@ -1,0 +1,19 @@
+{
+  "name": "binary-trees",
+  "version": "1.0.0",
+  "description": "Binary Tree and Binary Search Tree data structure",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest -i --coverage --verbose",
+    "lint": "eslint ."
+  },
+  "author": "Joy & Daniel",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "jest": "^22.4.2"
+  }
+}
