@@ -1,5 +1,13 @@
 # Lab 35 Documentation:
 
+## Installation:
+
+  Clone to directory, import into file where needed.
+  
+## Testing:
+
+  Each function is tested to verify if given a valid input it returns the desired input, they are also tested for invalid and undefined inputs.
+
 ## Binary Tree
 
   A Binary tree is a tree consisting of nodes with a maximum of 2 children. They are organized as left or right. This file contains traversal methods for binary trees:
