@@ -27,13 +27,14 @@ module.exports = class BST {
   }
 
   remove(val, node = this.root, parent = null) {
-    if (!node) return null;
+    if (!val || !node) return null;
 
     let prnt = null;
-    const _deleteMin = (nd) => {
+    const _deleteMin = (nd, prev) => {
       if (!nd.left) {
         let min = nd.value;
-        prnt.left = null;
+        if (prnt) prnt.left = null;
+        else prev.right = null;
         return min;
       }
       else {
@@ -51,14 +52,20 @@ module.exports = class BST {
       return this.remove(val, node.right, parent);
     }
     else if (val === node.value) {
-      if (!parent) this.root = null;
-      else if (!node.right && !node.left) {
-        if (val < parent.value) parent.left = null;
+      if (!node.right && !node.left) {
+        if (!parent) this.root = null;
+        else if (val < parent.value) parent.left = null;
         else if (val > parent.value) parent.right = null;
       } 
-      else if (node.right && !node.left) parent.right = node.right;
-      else if (!node.right && node.left) parent.left = node.left;
-      else if (node.right && node.left) node.value = _deleteMin(node.right);
+      else if (node.right && !node.left) {
+        if (!parent) this.root = node.right;
+        else parent.right = node.right;
+      }
+      else if (!node.right && node.left) {
+        if (!parent) this.root = node.left;
+        else parent.left = node.left;
+      }
+      else if (node.right && node.left) node.value = _deleteMin(node.right, node);
     }
   }
 
