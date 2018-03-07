@@ -1,8 +1,18 @@
 # Lab 35 Documentation:
 
 ## Installation:
-
-  Clone to directory, import into file where needed.
+  
+  To use:
+  
+  1 Fork the repository using the fork option at the top right of github.
+  2 Clone the forked repository to directory.
+  3 Import into file where needed.
+  
+  To run tests:
+  
+  1 Follow use instructions.
+  2 In Terminal run NPM Install inside the directory.
+  3 Use NPM Run Test in directory from terminal.
   
 ## Testing:
 
